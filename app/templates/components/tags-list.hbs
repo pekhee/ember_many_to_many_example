@@ -1,0 +1,5 @@
+{{#each tags as |tag|}}
+  {{#tags-show tag=tag}}
+    {{yield tag}}
+  {{/tags-show}}
+{{/each}}
