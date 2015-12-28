@@ -1,32 +1,13 @@
 <h2 id="title">Welcome to Ember</h2>
 
 <h2> Posts with Tags </h2>
-{{#each model.posts as |post|}}
-  <article>
-    <h3>{{post.title}}</h3>
-    <p>{{post.body}}</p>
-
-    <ul>
-      {{#each post.tags as |tag|}}
-        <ol>{{tag.name}}</ol>
-      {{/each}}
-    </ul>
-  </article>
-{{/each}}
+{{#posts-list posts=model.posts as |post|}}
+  {{tags-list tags=post.tags}}
+{{/posts-list}}
 
 <h2> Tags with Posts </h2>
-{{#each model.tags as |tag|}}
-  <ul>
-    <ol>
-      <h3>{{tag.name}}</h3>
-      {{#each tag.posts as |post|}}
-        <article>
-          <h4>{{post.title}}</h4>
-          <p>{{post.body}}</p>
-        </article>
-      {{/each}}
-    </ol>
-  </ul>
-{{/each}}
+{{#tags-list tags=model.tags as |tag|}}
+  {{posts-list posts=tag.posts}}
+{{/tags-list}}
 
 {{outlet}}
