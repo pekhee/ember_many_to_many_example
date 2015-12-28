@@ -4,27 +4,49 @@ module.exports = function(app) {
   var postsRouter = express.Router();
 
   postsRouter.get('/', function(req, res) {
+    console.log("Query: ", req.query);
     res.send({
-      '/posts': []
+      'posts': [
+        {
+          id: 1,
+          title: "Title 1",
+          body: "Body 1",
+          tags: [1, 2]
+        },
+        {
+          id: 2,
+          title: "Title 2",
+          body: "Body 2",
+          tags: [3, 4]
+        }
+      ]
     });
   });
 
   postsRouter.post('/', function(req, res) {
+    console.log("Body: ", req.body);
     res.status(201).end();
   });
 
   postsRouter.get('/:id', function(req, res) {
     res.send({
-      '/posts': {
-        id: req.params.id
+      'posts': {
+        id: req.params.id,
+        title: "Title 1",
+        body: "Body 1",
+        tags: [1, 2]
       }
     });
   });
 
   postsRouter.put('/:id', function(req, res) {
+    console.log("Body: ", req.body);
     res.send({
-      '/posts': {
-        id: req.params.id
+      'posts': {
+        id: req.params.id,
+        title: "Title 1",
+        body: "Body 1",
+        tags: [1, 2]
       }
     });
   });
@@ -33,15 +55,6 @@ module.exports = function(app) {
     res.status(204).end();
   });
 
-  // The POST and PUT call will not contain a request body
-  // because the body-parser is not included by default.
-  // To use req.body, run:
-
-  //    npm install --save-dev body-parser
-
-  // After installing, you need to `use` the body-parser for
-  // this mock uncommenting the following line:
-  //
-  //app.use('/api/-posts', require('body-parser'));
-  app.use('/api/-posts', postsRouter);
+  app.use('/api/posts', require('body-parser').json());
+  app.use('/api/posts', postsRouter);
 };
