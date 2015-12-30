@@ -16,6 +16,7 @@ var resources = function(router, resourceName) {
 
 Router.map(function() {
   resources(this, "posts");
+  resources(this, "tags");
 });
 
 export default Router;
