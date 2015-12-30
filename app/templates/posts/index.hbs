@@ -1,0 +1,8 @@
+<h2> Posts with Tags </h2>
+{{link-to "Craete a Post" "posts.create"}}
+
+{{#posts-list posts=model as |post|}}
+  {{tags-list tags=post.tags}}
+{{/posts-list}}
+
+{{outlet}}

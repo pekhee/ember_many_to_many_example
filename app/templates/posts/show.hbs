@@ -1,0 +1,11 @@
+{{link-to "Posts" "posts.index"}}
+
+{{#posts-show post=model as |post|}}
+  {{link-to "Edit" "posts.update" post}}
+  {{link-to "Delete" "posts.delete" post}}
+
+  {{tags-list tags=post.tags}}
+
+  {{outlet}}
+
+{{/posts-show}}
