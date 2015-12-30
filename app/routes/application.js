@@ -1,10 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return Ember.RSVP.hash({
-      posts: this.store.findAll("post"),
-      tags:  this.store.findAll("tag")
-    });
+  actions: {
+    save: function(model) {
+      model.save();
+    },
+    destroy: function(model) {
+      model.destroyRecord();
+    }
   }
 });
