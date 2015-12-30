@@ -1,7 +1,7 @@
 {{link-to "Posts" "posts.index"}}
 
-{{#posts-show post=model}}
-  {{posts-form post=model action="save"}}
+{{#posts-show post=model as |post|}}
+  {{posts-form post=post action="save"}}
 {{/posts-show}}
 
 {{outlet}}
