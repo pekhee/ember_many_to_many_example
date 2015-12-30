@@ -1,6 +1,22 @@
-<article>
-  <h3>{{post.title}}</h3>
-  <p>{{post.body}}</p>
+{{#if shouldExpand}}
+  <article>
+    <h3>
+      {{#if shouldLink}}
+        {{link-to post.title "posts.show" post}}
+      {{else}}
+        {{post.title}}
+      {{/if}}
+    </h3>
+    <p>{{post.body}}</p>
 
-  {{yield}}
-</article>
+    {{yield post}}
+  </article>
+{{else}}
+  <p>
+    {{#if shouldLink}}
+      {{link-to post.title "posts.show" post}}
+    {{else}}
+      {{post.title}}
+    {{/if}}
+  </p>
+{{/if}}
