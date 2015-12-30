@@ -1,13 +1,1 @@
-<h2 id="title">Welcome to Ember</h2>
-
-<h2> Posts with Tags </h2>
-{{#posts-list posts=model.posts as |post|}}
-  {{tags-list tags=post.tags}}
-{{/posts-list}}
-
-<h2> Tags with Posts </h2>
-{{#tags-list tags=model.tags as |tag|}}
-  {{posts-list posts=tag.posts}}
-{{/tags-list}}
-
 {{outlet}}
