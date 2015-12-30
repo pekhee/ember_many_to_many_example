@@ -1,0 +1,11 @@
+<form>
+  Title:   {{input value=post.title}}<br>
+  Body:    {{textarea value=post.body}}<br>
+  Tag IDS: {{input type=number value=tags}}<br>
+
+  {{yield}}
+
+  <button {{action "save"}}>
+    Save
+  </button>
+</form>
