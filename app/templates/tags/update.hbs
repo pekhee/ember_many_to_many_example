@@ -1,0 +1,7 @@
+{{link-to "Tags" "tags.index"}}
+
+{{#tags-show tag=model as |tag|}}
+  {{tags-form tag=tag action="save"}}
+{{/tags-show}}
+
+{{outlet}}

@@ -1,0 +1,8 @@
+{{link-to "Tags" "tags.index"}}
+
+{{#tags-show tag=model as |tag|}}
+  <button {{action "destroy" tag}}>
+    Delete
+  </button>
+  {{outlet}}
+{{/tags-show}}
