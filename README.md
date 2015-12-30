@@ -1,12 +1,13 @@
 # ManyToMany
 
 Example of a Many to Many Association using Ember Data 1.13 including a mock
-server.
+server built with components.
 
 ## Features
 * Exact responses Ember Data expects
 * Logs requests Ember Data sends
 * Sample models
+* Example of using components for CRUD
 
 ## Installation
 You will need the following things properly installed on your computer.
@@ -17,7 +18,7 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/pekhee/ember_many_to_many_example.git` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
